@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="cart.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>SleetShop</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+ <!-- ads -->
+ <div class="bg-black py-2 text-center text-sm">
+     <marquee behavior="" direction=""><h3 class="text-white">Summer Sale For All Swim Suits And Free Express delivery-OFF 50%! <span class="underline font-semibold">Shop Now!</span></h3></marquee>
+ </div>
+  <header id="header" class=" sticky top-0 z-20">
+     <!-- navbar -->
+      <nav class="flex items-center justify-between lg:px-24 px-4 py-5 bg-white border border-b-gray-200">
+        <!-- logo -->
+         <h1 class="font-extrabold md:text-3xl text-2xl text-gray-950">SleetShop</h1>
+         <ul class="md:flex items-center gap-5 hidden">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#footer">Contact</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#footer">About</a></li>
+         </ul>
+
+         <!-- mobile-nav-links -->
+          <div class="mobile-links hidden">
+            <div class="flex absolute top-0 z-30 bg-black bg-opacity-40 bg-blend-multiply w-[100%] left-0 h-[100vh]  gap-3">
+              <div class="bg-white pt-5 pl-5 w-[80%] h-[100vh]">
+                  <ul class="flex flex-col items-start gap-10 bg-white">
+                      <li><a href="#header">Home</a></li>
+                      <li><a href="#footer">Contact</a></li>
+                      <li><a href="#products">Products</a></li>
+                      <li><a href="#footer">About</a></li>
+                  </ul>
+              </div>
+              <i class='bx bx-x' id="close-icon" style="font-size: 2rem;"></i>
+            </div>
+          </div>
+
+         <div class="flex items-center gap-10">
+            <!-- search-box -->
+            <form action="" class="md:flex hidden items-center">
+                <input class="category-Input px-4 rounded-md py-2 bg-gray-100 placeholder:text-sm outline-none text-sm" type="text" placeholder="what are you looking for?">
+                <i class='bx bx-search' style="font-size: 1.5rem;"></i>
+            </form>
+
+            <!-- icons -->
+            <div class="flex items-center gap-3">
+                <!-- favourite-icon -->
+                <i class='bx bx-heart' style="font-size: 1.5rem;"></i>
+                <!-- cart-icon -->
+                 <div class="relative">
+                    <i class='bx bx-cart-alt' style="font-size: 1.5rem;"></i>
+                    <div class="cart-update bg-red-600 rounded-full md:pb-[0.11rem] pb-0 px-2 text-white md:text-[0.85rem] text-[0.7rem] font-semibold border-none absolute md:right-[-1.15rem] right-[-1rem] top-[-1rem]">0</div>
+                 </div>
+                 <!-- menu-icon -->
+                <div class="md:hidden block">
+                   <i class='bx bx-menu' style="font-size: 1.7rem;"></i>
+                </div>
+            </div>
+        </div>
+      </nav>
+
+
+      <!-- cart-page -->
+   <section class="cart-page w-[100%] absolute top-0 z-40 bg-white h-[100vh] md:h-[100vh]   hidden">
+    <div class="relative">
+    <h1 class="text-2xl font-bold text-center pt-2">Your Cart</h1>
+    <div class="flex flex-col items-center gap-4 mx-auto">
+        <h1 class="empty-message1 md:text-4xl font-bold text-[1rem] text-center ">Your Cart is empty</h1>
+        <p class="empty-message2 text-center font-light">Seems you've not added any products yet😒</p>
+    </div>
+    <div class="cart-content flex md:flex-row flex-col gap-10 md:gap-0 md:py-8 py-4 md:px-24 px-4 justify-between overflow-y-auto w-[100%] h-[100%]">
+       <!-- cart-products -->
+       <div class="cart-content show-cart flex flex-col gap-4 max-h-[55vh] overflow-y-auto">
+       </div>
+
+       <!-- cart-details -->
+        <div class="md:w-[40%]">
+            <h1 class="md:text-2xl font-semibold text-[1rem] text-center">Cart Details</h1>
+            <div class="md:w-[100%] flex flex-col md:gap-3 gap-1">
+                <div class="flex items-center justify-between">
+                    <h1 class="font-semibold text-sm">Sub total</h1>
+                    <p>$<span class="sub-total text-sm font-sesmibold">0</span></p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <h1 class="font-semibold text-sm">Shipping Fee</h1>
+                    <p class="font-semkibold text-sm">$10</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <h1 class="font-semibold text-sm">Total</h1>
+                    <p>$<span class="total text-sm font-semibold">0</span></p>
+                </div>
+            </div>
+            <!-- checkout-button -->
+             <button class="bg-blue-600 text-white font-bold w-[100%] py-2 sticky md:relative bottom-0">Checkout</button>
+        </div>
+        <i class='bx bx-x' id="cart-close-icon" style="font-size: 2rem; position: absolute; top: 5px; right: 10px;"></i>
+    </div>
+    </div>
+  </section>
+  </header>
+
+
+  
+
+  <!-- hero-section -->
+   <section class="md:px-24 md:py-0 py-10  flex md:flex-row flex-col items-center justify-between gap-[2rem] w-[100%]" data-aos="fade-up">
+    <!-- category -->
+     <div class="bg-white md:w-[20%] w-[100%]">
+        <ul class="category-btn flex md:flex-col overflow-x-auto flex-row md:items-start items-center gap-10 md:gap-4 cursor-pointer border-r-2 border-r-gray-200 md:text-sm text-[0.5rem] text-center md:text-left">
+            <li class="womenColl flex  items-center gap-4">
+                <p>Women's Collection</p>
+                <p class="mt-[0.3rem] "><i class='bx bx-chevron-right'></i></p>
+            </li>
+            <li class="menColl flex  items-center gap-4">
+                <p>Men's Collection</p>
+                <p class="mt-[0.3rem]"><i class='bx bx-chevron-right'></i></p>
+            </li>
+            <li class="electronics">Electronics</li>
+            <li class="electronics">Home & Lifestyle</li>
+            <li class="womenColl">Medicine</li>
+            <li class="menColl">Sports & Outdoor</li>
+            <li class="electronics">Baby & Toys</li>
+            <li class="jewelry">Groceries & Pets</li>
+            <li class="jewelry">Health & Beauty</li>
+        </ul>
+     </div>
+     <section class="bg-center bg-cover bg-custom-image md:bg-none h-[50%] md:mt-16 md:h-[24rem]">
+            <div class="flex md:flex-row flex-col items-center justify-between bg-black h-[50vh]  bg-opacity-75 md:bg-opacity-100   md:px-16 py-4">
+                <div class="text-white flex flex-col md:items-start items-center md:w-[45%] gap-4 pt-6 md:pt-0">
+                    <img src="Assets/iphone-img.png" class=" w-32" alt="">
+                    <h1 class="md:text-[3rem] text-[2.8rem] px-6  md:px-0 text-center md:text-left md:font-semibold font-bold  md:leading-[4rem] leading-[3.9rem]">Up to 10% off Voucher</h1>
+                    <div class="flex items-center gap-2">
+                        <p class="underline md:text-[1rem] text-[0.8rem]">Shop now</p>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="Assets/hero_image.png"  alt="">
+                </div>
+            </div>
+        </section>
+   </section>
+
+   <!-- limit-products-display -->
+    <section class="limit-products  flex flex-wrap items-center md:px-16  py-10 pb-14 md:gap-4 gap-2 justify-center "></section>
+
+   <!-- ads section -->
+   <section class="flex md:flex-row flex-col items-center justify-between  bg-black md:px-24 px-6 pb-12 md:py-0">
+        <div class="text-white flex flex-col items-start md:w-[35%] md:gap-8 gap-6 order-2 md:order-1">
+            <p class="text-sm font-bold text-[#00FF66]">Categories</p>
+            <h1 class="text-[3rem] font-semibold  md:leading-[4rem] leading-[3.5rem]">Enhance Your Music Experience</h1>
+            <div class="flex items-center gap-2">
+                <li class="bg-white text-black rounded-full flex items-center flex-col  leading-[0.4rem]  px-4 py-3">
+                    <p class="font-bold text-sm">23</p>
+                    <p class="font-semibold text-[0.6rem] pb-1">Hours</p>
+                </li>
+                <li class="bg-white text-black rounded-full flex items-center flex-col  leading-[0.4rem]  px-4 py-3">
+                    <p class="font-bold text-sm">05</p>
+                    <p class="font-semibold text-[0.6rem] pb-1">Days</p>
+                </li>
+                <li class="bg-white text-black rounded-full flex items-center flex-col  leading-[0.4rem]  px-3 py-3">
+                    <p class="font-bold text-sm">59</p>
+                    <p class="font-semibold text-[0.6rem] pb-1">Minutes</p>
+                </li>
+                <li class="bg-white text-black rounded-full flex items-center flex-col  leading-[0.4rem]  px-3 py-3">
+                    <p class="font-bold text-sm">35</p>
+                    <p class="font-semibold text-[0.6rem] pb-1">Seconds</p>
+                </li>
+            </div>
+
+            <button class="text-white px-6 py-2 bg-[#00FF66] font-semibold rounded-md">Buy Now</button>
+        </div>
+        <div class="relative order-1 md:order-2 mb-16 md:mb-0">
+            <img src="Assets/Ellipse 23 (1).png" alt="">
+            <img src="Assets/spaeker-img.png"  class="absolute top-4 md:right-8 md:z-10" alt="">
+        </div>
+    </section>
+
+    <!-- products-page -->
+     <section id="products" class="products-page flex flex-wrap items-center md:px-16  pt-10 md:gap-4 gap-2 justify-center">
+      
+       
+        
+     </section>
+
+    <!-- featured-section -->
+     <section class="md:px-24 px-6 my-20">
+        <h1 class="border-l-[12px] border-l-[#DB4444] text-[#DB4444] pl-4 rounded font-bold">Featured</h1>
+        <h2 class="text-2xl font-semibold pt-3 pb-5">New Arrival</h2>
+
+        <!-- grid-products -->
+         <div class="grid md:grid-cols-4 grid-cols-1 md:grid-rows-3 grid-rows-4 gap-4">
+            <div class="bg-black md:col-span-2 md:row-span-3 relative">
+                <img src="Assets/play-station (1).png" class="absolute bottom-0 left-10 w-40 md:w-[30rem]" alt="">
+                <div class="flex flex-col items-start gap-2 absolute md:bottom-7 md:left-7 bottom-4 left-4 z-10">
+                    <h1 class="md:text-2xl text-[1rem] font-semibold text-white">Play Station 5</h1>
+                    <p class="text-white md:w-[15rem] w-[10rem]  md:text-sm text-[0.7rem] font-thin">Black and white version of the PS5 coming out soon</p>
+                    <p class="text-white text-sm underline">Shop Now</p>
+                </div>
+            </div>
+            <div class="bg-black md:col-span-2 md:row-span-2 relative">
+                <img src="Assets/woman.png" class="absolute bottom-0 right-0 w-48 md:w-72" alt="">
+                <div class="flex flex-col items-start gap-2 absolute md:bottom-10 md:left-7 bottom-4 left-4 z-10">
+                    <h1 class="md:text-2xl text-[1rem] font-semibold text-white">Women's collections</h1>
+                    <p class="text-white md:w-[15rem] w-[10rem] md:text-sm text-[0.7rem] font-thin">Featured woman collection that gives you antother vibe.</p>
+                    <p class="text-white text-sm underline">Shop Now</p>
+                </div>
+            </div>
+            <div class="w-68 h-68 bg-black relative">
+                <img src="Assets/speakers.png" class="w-40 m-auto mt-4" alt="">
+                <div class="flex flex-col items-start gap-1 absolute bottom-4 left-4 z-10">
+                    <h1 class="text-[1rem] font-semibold text-white">Speakers</h1>
+                    <p class="text-white w-[15rem] text-[0.7rem] font-thin">Amazon wireless speakers</p>
+                    <p class="text-white underline c">Shop Now</p>
+                </div>
+            </div>
+            <div class="w-68 h-68 bg-black relative">
+                <img src="Assets/perfume.png" class="w-40 m-auto mt-4" alt="">
+                <div class="flex flex-col items-start gap-1 absolute bottom-4 left-4 z-10">
+                    <h1 class="text-[1rem] font-semibold text-white">Perfume</h1>
+                    <p class="text-white w-[15rem] text-[0.7rem] font-thin">GUCCI INTENSE OUD EDP</p>
+                    <p class="text-white underline text-sm">Shop Now</p>
+                </div>
+            </div>
+         </div>
+     </section>
+
+     <!-- services -->
+      <section class="flex md:flex-row flex-col items-center justify-between md:px-24 px-6 gap-10 md:gap-0">
+        <div class="flex flex-col gap-2 items-center">
+            <img src="Assets/Services.png" alt="" class="mb-2">
+            <p class="font-bold md:text-[1.2rem] text-[1rem]">FREE AND FAST DELIVERY</p>
+            <P class="md:text-sm text-[0.7rem] font-semibold">Free and fast delivery over $140</P>
+        </div>
+        <div class="flex flex-col gap-2 items-center">
+            <img src="Assets/Services (1).png" alt="">
+            <p class="font-bold md:text-[1.2rem] text-[1rem]">24/7 CUSTOMER SERVICE</p>
+            <P class="md:text-sm text-[0.7rem] font-semibold">Friendly 24/7 customer service</P>
+        </div>
+        <div class="flex flex-col gap-2 items-center">
+            <img src="Assets/Services (2).png" alt="">
+            <p class="font-bold md:text-[1.2rem] text-[1rem]">MONEY BACK GUARANTEE</p>
+            <P class="md:text-sm text-[0.7rem] font-semibold">We return money back within 30 days</P>
+        </div>
+      </section>
+
+      <!-- footer -->
+       <footer id="footer">
+        <div class="py-16 mt-20 bg-black text-white  px-24 flex md:flex-row flex-col md:items-start items-center md:justify-between justify-center md:text-left text-center">
+            <div>
+                <h1 class="font-semibold text-2xl py-4">SleetShop</h1>
+                <p class="py-2 md:text-sm text-[12px]">001224211 Ajerth str, California, USA</p>
+                <p class="pb-2 md:text-sm text-[12px]">0802312334</p>
+                <p class="pb-3 md:text-sm text-[12px]">cargoo@gmail.com</p>
+            </div>
+            <div>
+                <h1 class="font-semibold text-2xl py-4">Our Products</h1>
+                <p class="py-2 md:text-sm text-[12px]">Career</p>
+                <p class="pb-2 md:text-sm text-[12px]">Categories</p>
+                <p class="pb-3 md:text-sm text-[12px]">Packages</p>
+            </div>
+            <div>
+                <h1 class="font-semibold text-2xl py-4">Follow Us</h1>
+                <div class="flex items-center justify-center md:justify-normal gap-2">
+                    <i class='bx bxl-instagram' style="font-size: 1.7rem;"></i>
+                    <i class='bx bxl-twitter' style="font-size: 1.7rem;" ></i>
+                    <i class='bx bxl-youtube' style="font-size: 1.7rem;"></i>
+                </div>
+            </div>
+        </div>
+       </footer>
+
+
+      <script src="script.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+</body>
+</html>
